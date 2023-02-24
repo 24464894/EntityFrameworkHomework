@@ -30,5 +30,24 @@ namespace MainPage
             form.ShowDialog();
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var form = new ModifyForm();
+            form.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var form = new DeleteForm();
+            form.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var form = new SearchForm();
+            form.ShowDialog();
+        }
+        
     }
 }

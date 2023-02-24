@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Runtime.Remoting.Contexts;
 
 namespace MainPage
 {
@@ -17,13 +19,13 @@ namespace MainPage
         public AddForm()
         {
 
-             
         InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ContactsTable data = new ContactsTable()
+
+            /*ContactsTable data = new ContactsTable()
             {
                 ProductNumber = textBox1.Text.Trim(),
                 ProductName = textBox2.Text.Trim(),
@@ -33,6 +35,7 @@ namespace MainPage
             };
             try
             {
+
                 ContactsModel context = new ContactsModel();
                 context.ContactsTable.Add(data);
                 context.SaveChanges();
@@ -40,8 +43,16 @@ namespace MainPage
                 ClearTextBoxes();
             }
             catch (Exception ex)
-            { MessageBox.Show($"發生錯誤 {ex.ToString()}"); }
-
+            { MessageBox.Show($"發生錯誤 {ex.ToString()}"); }*/
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\alice\Desktop\EntityFrameworkHomework\MainPage\Contact.mdf;Integrated Security=True");
+            
+            string InsterQuey = "Insert into ContactsTable(ProductNumber,ProductName,NumberOfProducts,Price,CommodityCategory)ValueS('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text+"')";
+            con.Open();
+            SqlCommand cmd = new SqlCommand(InsterQuey, con);
+            cmd.ExecuteNonQuery();
+        
+            MessageBox.Show("存檔完成");
+            ClearTextBoxes();
         }
         private void ClearTextBoxes()
         {

@@ -60,12 +60,13 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("標楷體", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button3.Location = new System.Drawing.Point(168, 179);
+            this.button3.Location = new System.Drawing.Point(168, 182);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(223, 56);
             this.button3.TabIndex = 2;
             this.button3.Text = "修改一個商品";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -76,6 +77,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "刪除一個商品";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -86,6 +88,7 @@
             this.button5.TabIndex = 4;
             this.button5.Text = "查詢一個特定的商品";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Form1
             // 
